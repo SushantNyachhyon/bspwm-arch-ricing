@@ -30,4 +30,4 @@ keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
-keymap.set('n', 'ff', ':lua vim.lsp.buf.formatting_seq_sync()<Return>')
+keymap.set('n', 'ff', ':lua vim.lsp.buf.format()<Return>')

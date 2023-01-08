@@ -54,7 +54,7 @@ protocol.CompletionItemKind = {
 }
 
 -- Set up completion using nvim_cmp with LSP source
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
+local capabilities = require('cmp_nvim_lsp').default_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
@@ -71,6 +71,10 @@ nvim_lsp.tsserver.setup {
 }
 
 nvim_lsp.pyright.setup{}
+
+nvim_lsp.prismals.setup{}
+
+nvim_lsp.intelephense.setup{}
 
 nvim_lsp.sourcekit.setup {
   on_attach = on_attach,

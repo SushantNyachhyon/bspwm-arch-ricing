@@ -3,6 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'rmehri01/onenord.nvim'
+    use 'folke/tokyonight.nvim'
     use 'nvim-lualine/lualine.nvim'
     use 'kyazdani42/nvim-web-devicons'
     use 'nvim-lua/plenary.nvim' -- Common utilities
@@ -25,4 +26,5 @@ return require('packer').startup(function(use)
     use 'norcalli/nvim-colorizer.lua'
     use 'jose-elias-alvarez/null-ls.nvim'
     use 'MunifTanjim/prettier.nvim'
+    use 'numToStr/Comment.nvim'
 end)
