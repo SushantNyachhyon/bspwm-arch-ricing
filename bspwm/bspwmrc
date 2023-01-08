@@ -13,44 +13,22 @@ bspc config gapless_monocle      true
 bspc config pointer_follows_focus true
 bspc config focus_follows_pointer true
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Google-chrome desktop='^2'
-bspc rule -a firefox desktop='^2'
-bspc rule -a Thunar state=floating
-bspc rule -a mplayer2 state=floating
-bspc rule -a Yad state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
 
+# polybar
+polybar -r &
 
-# Border
-bspc config focused_border_color        "#6c71c4"
-bspc config normal_border_color         "#073642"
-bspc config active_border_color         "#073642"
-
-#
-# Autostart
-#
-# Set display from arandr saved script
-# sh ~/.screenlayout/monitor.sh &
-# Bar
-$HOME/.config/polybar/launch.sh &
-# Notifications
+# notification
 /usr/bin/dunst &
-# Polkit
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-# Wallpaper
-nitrogen --restore &
-# Dex
-dex -a -s /etc/xdg/autostart/:~/.config/autostart/  &
-# Picom
+
+# picom
 picom -b &
-# Network Applet
-nm-applet --indicator &
 
-# Cursor
+# wallpaper 
+~/.fehbg &
+
+# xresources
+xrdb ~/.Xresources &
+
+# cursor
 xsetroot -cursor_name left_ptr &
-
-# Low battery notifier
-# ~/.config/bspwm/scripts/low_bat_notifier.sh
-
