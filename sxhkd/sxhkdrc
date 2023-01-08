@@ -4,27 +4,15 @@
 
 # terminal emulator
 super + Return
-	xfce4-terminal
+	alacritty
 
 # program launcher
-super + space
+super + @space
 	~/.config/rofi/launchers/type-1/launcher.sh
 
-# show open window
-super + ctrl + d
-	rofi -modi drun -show window -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
-                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
 
-# show ssh sesssions
-super + shift + d
-	rofi -modi drun -show ssh -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
-                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
-
-# power-menu 
-super + shift + e
-     ~/.config/rofi/powermenu/type-1/powermenu.sh
+super + shift + q
+	~/.config/rofi/powermenu/type-1/powermenu.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -135,46 +123,19 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
-#
-# Special hotkeys
-#
 
 # Multimedia keys
 XF86AudioRaiseVolume
-  amixer -q set Master 5%+ unmute
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 # Still multimedia
 XF86AudioLowerVolume
-  amixer -q set Master 5%- unmute
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 # still
 XF86AudioMute
-  amixer -D pulse sset Master toggle-mute
-  
-# amixer -q set Master toggle
-# Simple amixer command seems to have problems unmuting device
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-# Brightness up
-XF86MonBrightnessUp
-  xbacklight -inc 5
-
-# And brightness down
-XF86MonBrightnessDown
-  xbacklight -dec 5
-
-# Screenshot
 Print
   scrot ~/$(xdg-user-dir PICTURES)/Screenshot-$(date +%F_%T).png
 
-super + Print
-  ~/.config/bspwm/scripts/screenshot.sh
-
-# Shortcuts
-super + w 
-  firefox
-
-super + n 
-  thunar  
-
-super + F1
-  ~/.config/bspwm/scripts/keybindings_rofi.sh
