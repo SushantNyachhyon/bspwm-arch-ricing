@@ -17,3 +17,4 @@ My First Awesome BSPWM ricing with Arch Distro
 - [adi1090x](https://github.com/adi1090x/rofi) (for awesome rofi them)
 
 ## Screenshot
+![enter image description here](https://github.com/SushantNyachhyon/dotfiles/blob/master/screenshot.png)
